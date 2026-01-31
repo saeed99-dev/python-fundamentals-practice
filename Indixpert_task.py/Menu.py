@@ -4,7 +4,7 @@ while True:
     print("2. Search Student Records ")
     print("3. Exit ")
     choice=int(input("Please Enter Your Choice: "))
-#    for i in range(1,3):  # check here choice == i and choice itself. why two variable ?
+
     if choice==1:
         student={
                 "name":input("Please Enter student's name: "),
@@ -15,6 +15,16 @@ while True:
         listdata.append(student)
         print(listdata)
     elif choice==2:
-        id=int(input("Please Enter Student's ID "))
-        #for n in listdata:
-            
+        search_id=int(input("Please Enter Student ID to search for "))
+        found_student=False
+        for student in listdata:
+            if student["id"]==search_id:
+                found_student=student
+                break
+        
+        if found_student:
+            print(f"\nDetail Found for student ID = {student["id"]}\n-----Searched Student's Details-----\n{found_student}")
+        else:
+            print("Student's ID not Found!")
+    elif choice==3:
+        break
