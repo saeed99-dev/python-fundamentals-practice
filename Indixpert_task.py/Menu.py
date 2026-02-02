@@ -1,3 +1,5 @@
+import json
+
 listdata=[]
 while True:
     print("1. Registration ")
@@ -31,12 +33,12 @@ while True:
                 for student in listdata:
                     if student["id"]==search_id:
                         print(f"\nDetail Found for student ID = {student["id"]}")
-                        print(f"-----Searched Student's Details-----\n{student}")
+                        print(f"-----Searched Student's Details-----\n{json.dumps(student,indent=4)}")
                         break   
                 else:
                     print("Student's ID not Found!")
             elif choice==3:
-               print(listdata)
+               print(json.dumps(student,indent=4))
             else:
                 print("Exiting Program....")
                 break
