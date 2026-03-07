@@ -1,0 +1,1 @@
+{"error": "invalid literal for int() with base 10: 'cls'", "time": "2026-02-25 11:52:34.731727", "operation name": "deposit", "deposit amount": "cls"}

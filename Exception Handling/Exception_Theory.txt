@@ -1,0 +1,86 @@
+Exceptional Handling:: It allows a program to deal with unexpected events (errors) gracefully rather than crashing.
+
+while writing a code we will face 2 types of error:
+    1. Syntax Error(During compilation):: 
+        syntax error occurs when python interpretor find something wrong withe structure of the code.
+            ---> not following rule of the language
+            ---> programe fail to run and will show message explaining the error.
+            ---> Examples::  paranthesis missing, undefine variable, indentation error, collon missing, etc.
+
+    2. Exceptions/Runntime Error:: 
+        this error occurs During execution of the programe 
+        it does not prevent programe from running but causes it to crash if not handled. Normally faced when somthing  unforseen happens.
+        raised by python runntime.
+        ---> Examples: divison by zero, database connection , memory overflow, etc.
+
+
+Python uses a four-part block structure to manage errors.
+    1. The try Block
+        This block contains the code that might raise an exception. Python monitors this code during execution.
+
+    2. The except Block
+        If an error occurs in the try block, execution jumps here. You can catch specific errors or use a general handler.
+
+    3. The else Block
+        This block runs only if no exceptions were raised in the try block. This is useful for code that should only proceed if the previous operation was successful.
+
+    4. The finally Block
+        This block always runs, regardless of whether an exception occurred or was caught. This is typically used for "cleanup" actions like closing files or database connections.
+ 
+
+1. Sequential Handlers:
+    example::
+        try:
+            # potential code
+            pass
+        except ValueError:
+            # Handle value errors
+            pass
+        except TypeError:
+            # Handle type errors
+            pass
+
+
+2. Grouped Handlers
+    example::
+        try:
+            pass
+        except (ValueError, TypeError) as e:
+            print(f"A data error occurred: {e}")
+
+
+Standard Error Types::::
+    1. TypeError--->
+        Definition:: Occurs when an operation or function is applied to an object of an inappropriate type.
+        
+        When to use:: Use this when a function expects a specific data type (like a string) but receives something else (like an integer).
+        
+        Where to use:: In the input validation section of your functions.
+            
+            Example: if not isinstance(name, str): raise TypeError("Name must be a string")
+    
+    2. ValueError--->
+
+        Definition:: Occurs when an argument has the right type but an inappropriate value.
+
+        When to use:: Use this when the data type is correct, but the content doesn't make sense for the operation.
+
+        Where to use:: Use this for range checks, format checks, or mathematical constraints.
+
+            Example: A function that calculates square roots should throw a ValueError if passed a negative number (even if the number is a float).
+
+    3. AttributeError--->
+
+        Definition:: Raised when an attribute reference or assignment fails (i.e., you try to access a property that doesn't exist).
+
+        When to use:: Usually raised automatically by the system, but you can throw it when mocking objects or creating proxy classes.
+
+        Where to use:: Inside classes where dynamic property access is being restricted or managed.
+
+    4. KeyError / IndexError--->
+
+        Definition:: KeyError is for missing dictionary keys; IndexError is for out-of-range sequences.
+
+        When to use:: Use these when a user requests a specific item from a collection that isn't there.
+
+        Where to use:: Data retrieval methods or API endpoints where a specific ID is requested.

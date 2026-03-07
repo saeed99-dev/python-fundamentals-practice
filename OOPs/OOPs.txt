@@ -1,0 +1,177 @@
+OOP allows developers to create their own blueprints (Classes) to generate custom objects.
+
+It is always helpfull if we could create  a blueprint of what we want and then create multiple copies of it.
+
+OOPs hepls us in doing::
+    -->Define our own datatype
+    -->Modularity:: Code is organized into self-contained modules (classes), making it easier to troubleshoot.
+    -->Reusability::
+    -->Scalability:: It is easier to manage large, complex software systems by breaking them down into 
+                    manageable objects.
+    -->Maintainability::  Changes in one part of the code (a class) usually don't affect other parts, 
+                    reducing bugs during updates.
+
+
+Class:??????
+    1. A blueprint or template for creating objects. It defines the structure.
+    2. blueprint
+    3. self define datatype
+    4. it consist of :
+        1. data/attributes/properties
+        2. Behaviour/Method
+
+OBJECT::??????
+    An object is an instance of our class..  If "Car" is a class, "Your Toyota" is an object.
+
+        (***********Everythin in Python is an object. (strings, lists, functions)***********)
+
+NOTE:: All datatypes are built in Classes in Python.
+
+Constructor & Self::::
+    __init__
+    whenever we create/construct an object of a class, there is an inbuilt method (__init__) which is called Constructor. IT is called itself.
+   
+    The constructor used to initialize an object's attributes when it is created.
+
+    advantage/application of Constructor:::
+        1. Background check in companies.
+        2. internet check for application
+        3. configration related check before sharing
+
+    its like a receptionist which which checks and add/gives all information required.
+
+Self:::::
+    --> self is the referance to the object created of our class.
+    --> it is passed whenever we are calling any function.
+    --> only an object can access or helpfull in connecting attributes and method inside our class.
+    --> A reference to the current instance of the class, used to access variables belonging to the class.
+
+
+MAGIC METHOD (DUNDER):::::
+    they are special method in python which are define inside class.
+    they begine and end with double underscore(__)
+    they have a special where they get called themselves.
+    examples:::
+        creation---> __init__(),
+        print--->    __str__(),
+        add----->    __add__(), etc
+
+
+INSTANCE VARIABLES::::
+
+    examples:::
+        s1=student('Saeed',27)
+        s2=student('Asif',28)
+
+        s1.name
+        s2.name
+        s1 and s2 above are instance varible which have different favlue of attribute.
+
+-->Instance Variable::	Data unique to a specific instance of a class. Defined inside __init__ using self.
+                It is Unique to each object.
+-->Object Variable:: Another name for an Instance Variable. These terms are used interchangeably.
+                It is Unique to each object.
+-->Class Variable:: Data shared by all instances of a class. Defined directly inside the class body.
+                It is shared accross all objects
+-->Method:: A function defined inside a class that describes what the object can do.
+        it define behaviour.
+
+Attributes vs. Methods:
+        1. Attributes represent the state of the object (the "nouns").
+
+        2. Methods represent the actions of the object (the "verbs").
+
+        3. Since "Instance Variable," "Object Variable," and "Class Variable" all refer to ways to store data, "Method" stands out as the functional component.
+
+Access Modifier in Python (from public to private by putting suffix double underscore(__)):::
+    --->we can choes to provide access to our variable by making them public or private.
+    --->Normally we make all the data member private.
+
+==> The Four Pillars of OOP:::::::
+
+A. Encapsulation
+    Encapsulation restricts direct access to data to prevent accidental modification. In Python, we use underscores to indicate "private" variables.
+        1. _variable : Protected (Internal use).
+        2. __variable : Private (Name mangling applied).
+
+    why use it????
+         To protect data integrity and prevent external code from accidentally corrupting an object's internal state.
+    when to use????
+        Whenever you want to validate data before it is saved or hide compexity of data stored.
+    where to use????
+        any system requiring data securitysuch as banking systems (account balance), user profiles (passwords)
+
+
+B. Abstraction (The "User Interface")
+    Hiding complex implementation details and showing only the essential features of an object. 
+    It focuses on what an object does rather than how it does it.
+
+    Why use it??? 
+        To reduce complexity and allow users to interact with a system without needing to understand its internal mechanics.
+    When to use it???
+        When you are building a framework or a library where the end-user only needs to know the interface (buttons/methods) and not the logic.
+    Where to use it??? 
+        Remote controls, car dashboards, or API endpoints.
+
+
+C. Inheritance
+    Inheritance allows one class (Child) to derive attributes and methods from another class (Parent).
+        1. Single Inheritance: Child inherits from one parent.
+        2. Multiple Inheritance: Python supports inheriting from multiple classes.
+        3. super() : Used to call methods from the parent class.
+
+    we inherit:::
+        -->non-private attributes
+        -->non-private methods
+        -->constructor(or other magic method)
+
+    Why use it??? 
+        To promote code reusability. You write common code once in the parent class and specialized code in the child classes.
+    When to use it??? 
+        When there is an "is-a" relationship (e.g., a Car is a Vehicle, a Dog is an Animal).
+    Where to use it??? 
+        Game development (different types of enemies), UI frameworks (different types of buttons).
+
+
+    --->we cannot access  private attribute or method of our parent class
+            example::
+                    class User:
+                        def __init__(self,name,id):
+                            self.name=name
+                            self.id=id
+
+                    class Student(User):  # here we 
+                        pass
+
+
+D. Polymorphism (The "Many Faces")
+    The ability of different objects to respond to the same method call in their own specific way. (Greek: poly = many, morph = forms).
+
+    Why use it??? 
+        To allow for flexibility and extensibility. You can process different types of objects using the same interface.
+    When to use it??? 
+        When you have a list of different objects that all share a common action but perform it differently.
+    Where to use it??? 
+        Payment systems (paying via Credit Card vs. PayPal), Graphics (drawing a Circle vs. a Square).
+
+
+
+Key Differences at a Glance
+
+Feature	                            Class	                         Object
+Definition	        A blueprint or template.	                A physical manifestation of the template.
+Quantity	        You only define the class once.	            You can create unlimited objects from one class.
+Data	            Does not hold specific values.	            Holds specific data (state).
+Memory	            Minimal (just the code definition).	        Allocated for every new instance created.
+
+
+==>How isinstance(obj,class) Works with Inheritance????
+        One of the most powerful features of isinstance() is that it supports Inheritance. If you create a more specific class (like Dog) that inherits from Animal, a Dog object is considered an instance of both Dog and Animal.
+
+isinstance() vs type()
+
+Feature	                  isinstance(obj, Class)	                   type(obj) == Class
+
+Inheritance	            Supports it (checks subclasses).	       Does not support it (checks exact type).
+Flexibility	            Can check against a tuple of types.	        Only checks one type at a time.
+Best Practice	        Recommended for most logic.	                Used only when an exact match is required.

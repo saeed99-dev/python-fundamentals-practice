@@ -1,0 +1,57 @@
+list.append(object)= Add a new element to the end of a list 
+
+list.insert(index, object)=Insert an element at the particular Position
+
+list.remove(value)= Remove an element by its value
+
+list.pop(index)=Remove an element by its index
+
+list.clear()= The most explicit and readable way to empty a list.
+
+del list[:]= Removes every item from the list. This is an "in-place" operation, meaning if you have another variable pointing to this list, it will see the changes too.
+
+range(Sequence[int]): = give a range from start to( end-1)
+
+
++ Operator=(e.g=list_1+list_2)=	New list=	Keeping the original lists unchanged
+
+extend()=(e.g= list_1.extend(list_2))=	Modifies List 1 =	Performance when working with very large lists.
+
+[*a, *b]=(e.g.= *list_1, "middle", *list_2)==	New list==	Joining multiple lists or adding extra elements.
+
+list.index(value) = find the position of a specific value.
+
+list[::-1]== reverse a  list 
+
+list.count(value)== Count how many times a value appears in a list
+
+list.split()== Word Splits==Splits by any whitespaceGeneral sentences and paragraphs.
+list.split(",")==Word split==Splits by specific characterProcessing CSV or structured data
+list.split(" ",2)== split into 3 groups only
+
+list(string)==Splits by every characterWhen you need a list of letters, not words.
+
+list.copy()== create a shallow copy
+list=list_1== now list_1 is a shallow copy
+list_2==list(original)== now list_2 is a new shallow copy of original
+
+",".join(list)== join a list of string by a commas
+
+types_list = [type(item) for item in numbers] ==== finding types of each items
+
+int_numbers = [int(item) for item in string_numbers]==== for converting a list of integer in form string to a list of integer 
+
+del list[index]=== delete items at a particular index.
+
+concatation::
+[List] + [List]===Both are sequences.
+"String" + "String"===Both are text sequences.
+[List] + Integer====No You can't "glue" a single number to a container.
+"String" + Integer===No Python doesn't know if you want to add the number or type it.
+for concating same grope is needed to glue them otherwise they show error
+
+list.reverse()=== to print in reverse Order
+
+
+for value,index in enumerate(number)=== to find each element's position
+

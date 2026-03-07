@@ -1,0 +1,73 @@
+1. "Serialization" is the process of turning a Python object into a JSON format.
+
+json.dump(obj, fp)::
+        The "s" is missing:: It stands for "Dump to File".
+        Purpose:: Writes a Python object directly into an open file.
+        Arguments:: 1. obj: The Python object (dict, list, etc.).
+                    2. fp: The file pointer (an open file in 'w' mode).
+    example:: 
+        with open("data.json", "w") as f:
+        json.dump({"name": "Alice"}, f)
+
+
+json.dumps(obj)::
+        The "s" is present:: It stands for "Dump to String".
+        Purpose:: Converts a Python object into a JSON-formatted string.
+        Arguments:: obj (The Python object).
+        Returns:: A str.
+        Example::
+                json_string = json.dumps({"name": "Alice"})
+                print(type(json_string))                      # <class 'str'>
+
+
+2. "Deserialization" is the process of turning JSON data back into a Python object.
+
+json.load(fp)::
+        The "s" is missing:: It stands for "Load from File".
+        Purpose:: Reads a file containing JSON data and converts it into a Python dictionary or list.
+        Arguments:: fp (The file pointer open in 'r' mode).
+        
+        Example::
+                with open("data.json", "r") as f:
+                data = json.load(f)
+
+
+json.loads(s)::
+        The "s" is present: It stands for "Load from String".
+        Purpose: Parses a JSON-formatted string and converts it into a Python object.
+        Arguments: s (The string containing JSON).
+        
+        Example:
+                my_dict = json.loads('{"name": "Alice"}')
+
+
+
+3. Important Rules::
+    JSON is not Python: JSON keys must be strings (double quotes). Python dictionaries can have tuples or integers as keys, but json.dump will convert them to strings or raise an error.
+    
+    Data Type Compatibility:
+        Python True/False -> JSON true/false
+        Python None -> JSON null
+        Python dict -> JSON object
+        Python list/tuple -> JSON array
+
+
+NOTE::: To update a data in .json file(already created)::---
+1. first import os and track the path (if it exists or not as os.path.exists(filename) and if not exists then create the file first otherwise show error)
+                example:: 
+                    if os.path.exists(filename):
+                        logics i.e 1 and 2 steps
+                    else:
+                        print(Error: file not exits, create it first)
+2. then read ("r") the file and load it with current data and
+                  example:
+                    with open(filename, "r") as file:
+                        current_data = json.load(file)
+3. then append it as do in python (like .append() for dict data and .extend() for list data------ normal python operation)
+                example:
+                    current_data.extend(new_items)  (for list data)
+                    
+3. then write ("w") the file and dump it with the current data 
+                example:
+                    with open(filename, "w") as file:
+                        json.dump(current_data, file, indent=4) 

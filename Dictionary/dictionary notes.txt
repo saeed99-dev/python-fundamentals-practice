@@ -1,0 +1,44 @@
+dictionaty.pop(key)=== method is a great way to remove a key because it not only deletes the entry from the dictionary but also "hands" you the value back so you can use it or print it.
+del dictionary[key]=== delete the value
+
+dictionary[key] === add key and value if not exists or update if exists.
+
+print(dictionary.[key])==== give value or error if not exists
+print(dictionary.get("key"))==== return none if not exists
+
+for key in dictionary:==== to get all keys in dictionary
+dictionary.keys()====to get all keys in dictionary
+
+dictionary.items()===to get all keys and values in dictionary
+
+dictionary.value()====Get a list of all values in a dictionary.
+
+dict(zip(list_keys,list_values))===== it Create a dictionary from two lists
+
+
+dict.fromkeys(keys, "default_values")==== it Initialize a dictionary with default values for a list of keys(given)
+
+print(list(dictionary.items())[-1])=== to get the last items added in a dictionary
+print(dictionary.popitem())====to get the last items added in a dictionary
+
+dictionary_1.update(dictionary_2)==== add dictionary_1 into dictionary_2 or i.e. update dictionary_2
+
+new_dictionary== disctnary_1|dictionary_2===== add two dictionary and  made a new one
+
+dict() constructor is designed to accept any iterable that contains pairs.(e.g=dict(list of pair tuple))
+
+dictionary.pop("key", None)=== it will delete the key if it exists ortherwise return None
+
+
+sorted(dictionary)===It Sort a dictionary by its keys.
+dict(sorted(dictionary.items()))===It Sort a dictionary by its keys.
+
+dict(sorted(dictionary.items(), reverse=True))===It Sort a dictionary by its keys in reverse order i.e. reverse sorting.
+
+print(sorted(dictionary.values()))=== sort only values out of dictionary in a list form
+print(sorted(dictionary.keys()))=====sort only keys out of dictionary in a list form
+
+sum(dictionary.values())====If you are certain that your dictionary contains only numbers, the most efficient way is to use the values() method combined with the built-in sum() function. Else iterate through Loop
+
+
+

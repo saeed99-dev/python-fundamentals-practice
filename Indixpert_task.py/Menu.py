@@ -50,7 +50,8 @@ while True:
             else:
                 print("Student's ID not Found!")
         elif choice == 3:
-            print(json.dumps(student, indent=4))
+            print("-----Displayed Information-----")
+            print(json.dumps(listdata, indent=4))
         else:
             print("Exiting Program....")
             break

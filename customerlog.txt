@@ -1,0 +1,6 @@
+{
+    "error": "invalid literal for int() with base 10: 'python -u \"c:\\\\Indixpert_Saeed\\\\GitHub-nov25-C\\\\python-fundamentals-practice\\\\OOPs\\\\class.py\"'",
+    "datetime": "2026-02-23 13:38:19.509635",
+    "function_name": "withdrow_cash",
+    "withdrow_amount": "python -u \"c:\\Indixpert_Saeed\\GitHub-nov25-C\\python-fundamentals-practice\\OOPs\\class.py\""
+}

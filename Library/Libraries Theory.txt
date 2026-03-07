@@ -1,0 +1,35 @@
+Library: OS
+        The os module provides a portable way of using operating system-dependent functionality. It allows your Python script to perform tasks like creating folders, deleting files, checking environment variables, and identifying the current user.
+
+Why use it?
+    1. Portability: Instead of writing different code for Windows (C:\path) and Linux (/home/path), the os module   handles the differences for you.
+    2. Automation: It is essential for scripts that need to organize files, clean up directories, or run system     commands.
+    3. Safety: It allows you to check if a file exists or if a folder is empty before performing dangerous actions like deleting.
+
+3. When to use it?
+        When you need to navigate the file system (change directories).
+        When you need to manage files (rename, delete, check size).
+        When you need to read environment variables (like API keys).
+        When you need to interact with the hardware (get CPU count, process IDs)
+
+A. File and Directory Management
+    1. os.getcwd():: Get Current Working Directory
+    2. os.listdir():: List all files/folders in a path
+    3. os.mkdir():: Create a new folder
+    4. os.rename():: Rename a file or folder
+    5. os.remove():: Delete a file
+    6. os.rmdir():: Delete an empty folder
+
+B. The os.path Sub-module (The most used part)
+
+    1. This is specific to checking properties of files.
+    2. os.path.exists("file.json"):: Returns True if the file is there.
+    3. os.path.isfile("path"):: Checks if the path is a file (not a folder).
+    4. os.path.isdir("path"):: Checks if the path is a folder.
+    5. os.path.join("folder", "file.txt"):: Combines names into a path safely (uses / or \ correctly).
+    6. os.path.getsize("file.txt"):: Returns the file size in bytes.
+
+C. System Information
+    1. os.name: Returns 'posix' (Linux/Mac) or 'nt' (Windows).
+    2. os.environ: A dictionary of all system environment variables.
+    3. os.cpu_count(): Returns the number of CPUs available.
